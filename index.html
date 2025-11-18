@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> STON TECHNOLOGY </title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at 20% 20%, #10121a, #0c0e14);
+      color: #e8f7ff;
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    /* Hero Header */
+    header {
+      text-align: center;
+      padding: 5em 1em 3em;
+      background: linear-gradient(180deg, #0b1a2f 0%, #10121a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, #4ddeff20 0%, transparent 70%);
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 0;
+      filter: blur(40px);
+    }
+    header h1 {
+      font-size: 2.7em;
+      font-weight: 700;
+      background: linear-gradient(90deg, #4ddeff, #00ffa8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      z-index: 2;
+      position: relative;
+    }
+    header p {
+      color: #a5d9ff;
+      font-size: 1.3em;
+      margin-top: 0.6em;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2em auto;
+      padding: 2.5em;
+      background: rgba(25, 27, 35, 0.6);
+      border-radius: 18px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px #0a0b0f80;
+    }
+
+    h2 {
+      text-align: center;
+      color: #4ddeff;
+      margin-bottom: 1em;
+    }
+
+    /* Leadership Roles */
+    .roles {
+      display: grid;
+      gap: 2em;
+      grid-template-columns: 1fr;
+      margin-bottom: 3em;
+    }
+    @media (min-width: 700px) {
+      .roles { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .card {
+      background: linear-gradient(135deg, #1b1e2d 60%, #2a2e4a 100%);
+      border-radius: 15px;
+      padding: 1.6em;
+      box-shadow: 0 4px 24px #1e768040;
+      transition: transform 0.25s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 6px 30px #4ddeff30;
+    }
+    .card .badge {
+      background: linear-gradient(90deg, #4ddeff, #00ffa8);
+      color: #0b1a2f;
+      padding: 0.4em 0.9em;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9em;
+      display: inline-block;
+      margin-bottom: 0.8em;
+    }
+    .card h3 {
+      color: #fff;
+      margin-bottom: 0.6em;
+    }
+    ul {
+      margin: 0;
+      padding-left: 1em;
+    }
+    li {
+      margin-bottom: 0.5em;
+      color: #c8e6f9;
+      font-size: 1.05em;
+    }
+
+    /* Team Section */
+    .team {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2.5em;
+      margin-top: 2em;
+    }
+    .member {
+      width: 230px;
+      padding: 1.3em 1em 2em;
+      text-align: center;
+      background: linear-gradient(145deg, #1a1d2a, #252a3d);
+      border-radius: 18px;
+      box-shadow: 0 6px 24px #28669950;
+      transition: transform 0.25s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .member::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top center, #4ddeff20, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .member:hover::after { opacity: 1; }
+    .member:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 10px 32px #4ddeff40;
+    }
+    .member img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 3px solid #4ddeff;
+      object-fit: cover;
+      margin-bottom: 1em;
+    }
+    .member h3 {
+      color: #4ddeff;
+      font-weight: 700;
+      margin-bottom: 0.4em;
+    }
+    .role {
+      background: #0d364a;
+      color: #a5d9ff;
+      border-radius: 12px;
+      padding: 0.3em 0.9em;
+      font-size: 0.85em;
+      display: inline-block;
+      margin-bottom: 0.7em;
+    }
+    .bio {
+      font-size: 0.95em;
+      color: #c0f0ff;
+      min-height: 50px;
+    }
+
+    /* Core Values Section */
+    .values {
+      text-align: center;
+      margin-top: 4em;
+    }
+    .values-grid {
+      display: grid;
+      gap: 2em;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      margin-top: 2em;
+    }
+    .value-card {
+      background: rgba(30, 34, 48, 0.8);
+      padding: 1.5em;
+      border-radius: 15px;
+      box-shadow: 0 3px 16px #1b4c6f60;
+      transition: all 0.3s;
+    }
+    .value-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 24px #4ddeff40;
+    }
+    .value-card h4 {
+      color: #4ddeff;
+      margin-bottom: 0.5em;
+    }
+
+    /* Vision Timeline */
+    .timeline {
+      margin-top: 5em;
+      position: relative;
+      padding-left: 1em;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      width: 3px;
+      background: linear-gradient(180deg, #4ddeff, #00ffa8);
+      height: 100%;
+      transform: translateX(-50%);
+    }
+    .milestone {
+      position: relative;
+      margin: 2.5em 0;
+      width: 50%;
+      padding: 1.3em 1.8em;
+      background: rgba(30, 34, 48, 0.8);
+      border-radius: 10px;
+      box-shadow: 0 4px 16px #1e768030;
+    }
+    .milestone.left {
+      left: 0;
+      text-align: right;
+    }
+    .milestone.right {
+      left: 50%;
+    }
+    .milestone h4 { color: #4ddeff; margin-bottom: 0.3em; }
+
+    @media (max-width: 800px) {
+      .milestone, .milestone.right, .milestone.left {
+        width: 90%;
+        left: 5%;
+        text-align: left;
+      }
+      .timeline::before { left: 3%; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1> STON TECHNOLOGY </h1>
+    <p>Building Tomorrow’s College Software Today 🚀</p>
+  </header>
+
+  <div class="container">
+    <h2>Leadership Roles</h2>
+    <div class="roles">
+      <div class="card">
+        <div class="badge">CEO</div>
+        <h3>Product & Vision</h3>
+        <ul>
+          <li>Drives mission and long-term vision</li>
+          <li>Inspires innovation across teams</li>
+          <li>Connects strategy with execution</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="badge">CTO</div>
+        <h3>Technology & Engineering</h3>
+        <ul>
+          <li>Owns architecture and platform reliability</li>
+          <li>Leads agile and rapid iteration cycles</li>
+          <li>Ensures security, scalability, and speed</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="badge">CPO</div>
+        <h3>Product Experience</h3>
+        <ul>
+          <li>Designs delightful user journeys</li>
+          <li>Prioritizes feedback-driven iteration</li>
+          <li>Bridges UX, design, and development</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Meet the Founders</h2>
+    <div class="team">
+      <div class="member">
+        <img src="SYED.jpg" alt="Founder & CEO" />
+        <h3>Syed Sameer</h3>
+        <div class="role">Founder & CEO</div>
+        <div class="bio">Visionary leader passionate about building college innovation ecosystems and fast product delivery.</div>
+      </div>
+
+      <div class="member">
+        <img src="MAHESH.jpg" alt="Co-founder & CTO" />
+        <h3>Mahesh Babu</h3>
+        <div class="role">Co-founder & CTO</div>
+        <div class="bio">Engineer, system architect, and AI enthusiast dedicated to reliable and scalable student tech.</div>
+      </div>
+
+      <div class="member">
+        <img src="TEJAS.jpg" alt="Co-founder & CPO" />
+        <h3>Tejas Kumar C</h3>
+        <div class="role">Co-founder & CPO</div>
+        <div class="bio">User advocate and design thinker creating seamless product experiences for students.</div>
+      </div>
+    </div>
+
+    <div class="values">
+      <h2>Our Core Values</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <h4>Innovation First</h4>
+          <p>We embrace creativity to shape smarter educational experiences.</p>
+        </div>
+        <div class="value-card">
+          <h4>Speed with Purpose</h4>
+          <p>Rapid execution meets intentional design — always user-first.</p>
+        </div>
+        <div class="value-card">
+          <h4>Transparency</h4>
+          <p>Open communication and honest iteration power our growth.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <h2>Our Vision Timeline</h2>
+      <div class="milestone left">
+        <h4>2025</h4>
+        <p>Launch MVP and onboard first 10 college partners.</p>
+      </div>
+      <div class="milestone right">
+        <h4>2026</h4>
+        <p>Expand to 50+ institutions and integrate AI personalization.</p>
+      </div>
+      <div class="milestone left">
+        <h4>2027</h4>
+        <p>Build a full ecosystem for academic innovation across Asia.</p>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
